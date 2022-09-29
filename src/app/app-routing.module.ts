@@ -6,6 +6,7 @@ import { ErrorComponent } from './Components/error/error.component';
 import { PerfilComponent } from './Components/perfil/perfil.component';
 
 const routes: Routes = [
+  { path: "", component: HomeComponent },
   { path: "Home", component: HomeComponent },
   { path: "Registro", component: RegistroComponent },
   { path: "Perfil", component: PerfilComponent },
