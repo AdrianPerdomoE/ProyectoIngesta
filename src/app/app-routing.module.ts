@@ -3,13 +3,12 @@ import { RouterModule, Routes } from '@angular/router';
 import { RegistroComponent } from './Components/registro/registro.component';
 import { HomeComponent } from './Components/home/home.component';
 import { ErrorComponent } from './Components/error/error.component';
-import { PerfilComponent } from './Components/perfil/perfil.component';
-
+import { PanelPrincipalComponent } from './Components/panel-principal/panel-principal.component';
 const routes: Routes = [
   { path: "", component: HomeComponent },
-  { path: "Home", component: HomeComponent },
+  { path: "Panel principal", component: PanelPrincipalComponent },
+  { path: "Inicio", component: HomeComponent },
   { path: "Registro", component: RegistroComponent },
-  { path: "Perfil", component: PerfilComponent },
   { path: "*", component: ErrorComponent },
 ];
 
