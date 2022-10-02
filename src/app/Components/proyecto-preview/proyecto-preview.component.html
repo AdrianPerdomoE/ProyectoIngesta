@@ -1,0 +1,23 @@
+<div class="proyecto" (click)="verProyecto()">
+    <div class="imagen">
+        <img src="{{url+'GetArchivo/'+proyecto.ubicacionArchivo}}" *ngIf="proyecto.tipoArchivo == 'Foto'">
+    </div>
+    <div>
+        <h3>Nombre: {{proyecto.nombre}}</h3>
+    </div>
+    <div>
+        <h3>creador: {{proyecto.creador}}</h3>
+    </div>
+    <div>
+        <h3>Etiquetas:</h3>
+        <ul>
+            <li *ngFor="let etiqueta of proyecto.etiquetas">
+                <h4>{{etiqueta}}</h4>
+            </li>
+        </ul>  
+    </div>
+    <div>
+        <h3>fecha: {{proyecto.fechaCreacion}}</h3>
+    </div>
+    
+</div>

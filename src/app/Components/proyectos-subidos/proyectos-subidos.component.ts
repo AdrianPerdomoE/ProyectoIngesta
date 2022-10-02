@@ -5,15 +5,16 @@ import { Global } from 'src/app/services/Global';
 import { Usuario } from 'src/app/models/Usuario';
 
 @Component({
-  selector: 'app-panel-principal',
-  templateUrl: './panel-principal.component.html',
-  styleUrls: ['./panel-principal.component.css']
+  selector: 'app-proyectos-subidos',
+  templateUrl: './proyectos-subidos.component.html',
+  styleUrls: ['./proyectos-subidos.component.css']
 })
-export class PanelPrincipalComponent implements OnInit {
+export class ProyectosSubidosComponent implements OnInit {
   public proyectos: Proyecto[];
   public url: string;
   public status: string;
   private usuario : Usuario
+  
   constructor(private _ServicioProyecto:ProyectoService) {this.proyectos = [];
     this.url = Global.url;
     this.status = "";
@@ -26,9 +27,11 @@ export class PanelPrincipalComponent implements OnInit {
       this.usuario = JSON.parse(localValor)
       this._ServicioProyecto.obtenerProyectosUsuario(this.usuario._id).subscribe(respuesta=>{
         this.proyectos = respuesta.PROYECTOS
-         this.proyectos =this.proyectos.slice(0,this.proyectos.length/2+1)
       })
     }
     
+    
   }
+  
+
 }

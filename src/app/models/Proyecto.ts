@@ -1,6 +1,7 @@
 export class Proyecto {
     constructor(
         public _id: string,
+        public etiquetas: Array<string>,
         public nombre: string,
         public descripcion: String,
         public camarografos: Array<string>,

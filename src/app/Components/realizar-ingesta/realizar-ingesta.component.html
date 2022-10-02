@@ -1,0 +1,56 @@
+<app-navbar></app-navbar>
+<div class="productForm container">
+    <h2 class="title">Ingesta</h2>
+    <div class="message Success" *ngIf="status =='Success'">El proyecto ha sido creado correctamente, puedes verlo <a
+            [routerLink]="['/proyecto',proyectoGuardado._id]">AQUI</a></div>
+    <div class="message Failed" *ngIf="status ==' Failed'"></div>
+    <form #proyectoForm="ngForm" (ngSubmit)="onSubmit(proyectoForm)">
+        <div>
+            <label for="name">Nombre del proyecto</label>
+            <input name="name" type="text" #nombre="ngModel" [(ngModel)]="proyecto.nombre" required>
+            <span *ngIf="nombre.touched && !nombre.value" class="formError">Este campo es obligatorio</span>
+        </div>
+        <div>
+            <label for="etiqueta">Agregar etiquetas</label>
+            <input name="etiqueta" type="text" #etiquetaA="ngModel" [(ngModel)]="etiquetaActual">
+            <span *ngIf="etiquetas.length==0" class="formError">Este campo es obligatorio</span>
+            <button (click)="addEtiqueta()" [disabled]="!etiquetaA.value">Agregar</button>
+            <ul>
+                <li *ngFor="let etiqueta of etiquetas" class="etiqueta" >
+                        {{etiqueta}} 
+                </li>
+            </ul>
+        </div>
+        <div>
+            <label for="descripcion">descripcion del proyecto</label>
+            <textarea name="descripcion" type="text" #descripcion="ngModel" [(ngModel)]="proyecto.descripcion"
+                required></textarea>
+            <span *ngIf="descripcion.touched && !descripcion.value" class="formError">Este campo es obligatorio</span>
+        </div>
+        <div>
+            <label for="camarografo">Agregar camarografos</label>
+            <input name="camarografo" type="text" #camarografoA="ngModel" [(ngModel)]="camarografoActual">
+            <span *ngIf="camarografos.length==0" class="formError">Este campo es obligatorio</span>
+            <button (click)="addCamarografo()" [disabled]="!camarografoA.value">Agregar</button>
+            <ul>
+                <li *ngFor="let camarografo of camarografos" class="etiqueta" >
+                        {{camarografo}} 
+                </li>
+            </ul>
+        </div>
+        <div>
+            <label for="Archivo">Archivo del proyecto</label>
+            <input name="Archivo" type="file" placeholder="Subir archivo" #archivo="ngModel" [(ngModel)]="proyecto.ubicacionArchivo"
+                (change)="fileChangeEvent($event)" required>
+            <span *ngIf="archivo.touched && !archivo.value" class="formError">Este campo es obligatorio</span>
+        </div>
+        <div>
+            <label for="tipo">Tipo de archivo</label>
+            <select name="miselect" #tipoA="ngModel" [(ngModel)]="tipoSeleccionado"required>
+                <option [ngValue]="tipo" *ngFor="let tipo of tipos">{{tipo}}</option>
+            </select>
+            <span *ngIf="tipoA.touched && tipoA.value == 0" class="formError">Este campo es obligatorio</span>
+          </div>
+          <button type="submit" [disabled]="!ValidarDatos(proyectoForm)">Realizar Ingesta</button>
+    </form>
+</div>

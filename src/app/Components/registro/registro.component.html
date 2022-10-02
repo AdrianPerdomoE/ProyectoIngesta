@@ -1,17 +1,45 @@
 <div id="Inicio">
     <h2>Registrarse</h2>
     <div class="cuadro" >
-        <form #formulario>
-          <div>
-            <label for="Correo">Correo institucional</label>
-            <input type="email" name="Correo" id="Correo_Institucional">
-          </div>  
-          <div>
-            <label for="Contraseña">Contraseña</label>
-            <input type="password" name="Contraseña" id="password">
-          </div>  
-          <button type="submit">Iniciar sesion</button>
+      <div class="UserForm container">
+        <div class="message Success" *ngIf="status == 'Success'">Registrado!</div>
+        <div class="message Failed" *ngIf="status == 'Failed'|| status == 'NombreUsuarioExiste'">Problema al registrar!
+        </div>
+        <form #userForm="ngForm">
+            <div>
+                <label for="nombre">Nombre</label>
+                <input name="nombre" type="text" #nombre="ngModel" [(ngModel)]="usuario.nombre" required>
+                <span *ngIf="nombre.touched && !nombre.value" class="formError">Este campo es obligatorio</span>
+            </div>
+            <div>
+                <label for="correo">Correo institucional</label>
+                <div class="message Existente" *ngIf="status =='Existe'">Usuario ya existente!
+                </div>
+                <input name="correo" type="email" #correo="ngModel" [(ngModel)]="usuario.correo" required>
+                <span *ngIf="correo.touched && !correo.value" class="formError">Este campo es obligatorio</span>
+                 <span class="formError" *ngIf="InvalidEmail">Ingrese un correo valido</span>
+            </div>
+            <div>
+              <label for="tipo">Cargo</label>
+              <select name="miselect" #CargoUsuario="ngModel" [(ngModel)]="seleccionado"required>
+                  <option [ngValue]="cargo" *ngFor="let cargo of cargos">{{cargo.nombre}}</option>
+              </select>
+              <span *ngIf="CargoUsuario.touched && CargoUsuario.value == 0" class="formError">Este campo es obligatorio</span>
+            </div>
+            <div>
+                <label for="password">Contraseña</label>
+                <input name="password" type="password" #password="ngModel" [(ngModel)]="usuario.password" required>
+                <span *ngIf="password.touched && !password.value" class="formError">Este campo es obligatorio</span>
+            </div>
+            <div>
+              <label for="passwordConfirmacion">Confirmar Contraseña</label>
+              <input name="passwordConfirmacion" type="password" #confirmacionpassword="ngModel" [(ngModel)]="passwordConfirmacion"  (keyup) ="confirmarPass()" required>
+              <span *ngIf="confirmacionpassword && !confirmacionpassword.value" class="formError">Este campo es obligatorio</span>
+              <span *ngIf="!iguales && confirmacionpassword.touched" class="formError">Contraseña es diferente</span>
+          </div>
+            <button (click)='registar(userForm)' [disabled]="!ValidarDatos(userForm)">Registrarse</button>
         </form>
+    </div>
 
     </div>
     <label> Ya tienes una cuenta?  <a href="Inicio">Inicia sesion</a></label>

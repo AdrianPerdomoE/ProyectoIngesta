@@ -14,6 +14,15 @@ import { NavbarComponent } from './Components/navbar/navbar.component';
 //importar servicios
 import { UsuarioService } from './services/usuario.service';
 import { ProyectoService } from './services/proyecto.service';
+import { RealizarIngestaComponent } from './Components/realizar-ingesta/realizar-ingesta.component';
+import { LogoComponent } from './Components/logo/logo.component';
+import { ProyectosSubidosComponent } from './Components/proyectos-subidos/proyectos-subidos.component';
+import { ProyectoPreviewComponent } from './Components/proyecto-preview/proyecto-preview.component';
+import { ProyectoComponent } from './Components/proyecto/proyecto.component';
+import { ArchivoService } from './services/archivo.service';
+import { EditarProyectoComponent } from './Components/editar-proyecto/editar-proyecto.component';
+import { BusquedaComponent } from './Components/busqueda/busqueda.component';
+import { ProyectoPreviewPanelComponent } from './Components/proyecto-preview-panel/proyecto-preview-panel.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +30,15 @@ import { ProyectoService } from './services/proyecto.service';
     HomeComponent,
     ErrorComponent,
     PanelPrincipalComponent,
-    NavbarComponent
+    NavbarComponent,
+    RealizarIngestaComponent,
+    LogoComponent,
+    ProyectosSubidosComponent,
+    ProyectoPreviewComponent,
+    ProyectoComponent,
+    EditarProyectoComponent,
+    BusquedaComponent,
+    ProyectoPreviewPanelComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +46,7 @@ import { ProyectoService } from './services/proyecto.service';
     HttpClientModule,
     FormsModule
   ],
-  providers: [UsuarioService,ProyectoService],
+  providers: [UsuarioService,ProyectoService,ArchivoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

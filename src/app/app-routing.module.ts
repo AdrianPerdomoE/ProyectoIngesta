@@ -4,8 +4,18 @@ import { RegistroComponent } from './Components/registro/registro.component';
 import { HomeComponent } from './Components/home/home.component';
 import { ErrorComponent } from './Components/error/error.component';
 import { PanelPrincipalComponent } from './Components/panel-principal/panel-principal.component';
+import { RealizarIngestaComponent } from './Components/realizar-ingesta/realizar-ingesta.component'; 
+import { ProyectosSubidosComponent } from './Components/proyectos-subidos/proyectos-subidos.component';
+import { ProyectoComponent } from './Components/proyecto/proyecto.component';
+import { EditarProyectoComponent } from './Components/editar-proyecto/editar-proyecto.component';
+import { BusquedaComponent } from './Components/busqueda/busqueda.component';
 const routes: Routes = [
   { path: "", component: HomeComponent },
+  { path: "realizar-ingesta", component: RealizarIngestaComponent },
+  { path: "Busqueda", component: BusquedaComponent },
+  { path: "proyecto/:id", component:ProyectoComponent },
+  { path: "EditarProyecto/:id", component:EditarProyectoComponent },
+  { path: "Archivos-Subidos", component: ProyectosSubidosComponent },
   { path: "Panel principal", component: PanelPrincipalComponent },
   { path: "Inicio", component: HomeComponent },
   { path: "Registro", component: RegistroComponent },

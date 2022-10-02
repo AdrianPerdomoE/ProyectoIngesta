@@ -1,0 +1,23 @@
+.proyecto {
+    background-color: #fff;
+    height: 100%;
+    border: 1px;
+    border-radius: 5px;
+    max-width: 240px !important;
+    min-width: 240px !important;
+    padding: 1rem;
+    box-shadow: 0 0.2rem 0.4rem 0 rgb(0 0 0 / 20%);
+    margin-bottom: 1rem;
+    cursor: pointer;
+}
+
+.imagen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.imagen img {
+    width: 12rem;
+    height: auto;
+    max-height: 10rem;
+}

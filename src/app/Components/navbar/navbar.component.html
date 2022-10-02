@@ -1,1 +1,26 @@
-<p>navbar works!</p>
+<app-logo></app-logo>
+<div class="nav">
+    <ul class="CajaLinks">
+    <li>
+        <a [routerLink]="'/Panel principal'" [routerLinkActive]="['actived']" class="links">panel principal</a>
+    </li>
+    <li>
+        <a [routerLink]="'/Busqueda'" [routerLinkActive]="['actived']" class="links">Busqueda   </a>
+    </li>
+    <li>
+        <a [routerLink]="'/Archivos-Subidos'" [routerLinkActive]="['actived']" class="links">Archivos Subidos  </a>
+    </li>
+    <li>
+        <a [routerLink]="'/Mis-descargas'" [routerLinkActive]="['actived']" class="links">Mis descargas </a>
+    </li>
+    <li>
+        <a [routerLink]="'/realizar-ingesta'" [routerLinkActive]="['actived']" class="links">Realizar ingesta </a>
+    </li>
+    <li>
+        <a  class="links">{{usuario.nombre}}\{{cargo}}</a>
+    </li>
+    <li>
+        <a [routerLink]="'/Inicio'" [routerLinkActive]="['actived']" class="links" (click)="cerrarSesion()">Salir</a>
+    </li>
+</ul>
+</div>

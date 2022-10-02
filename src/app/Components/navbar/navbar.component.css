@@ -1,0 +1,55 @@
+
+
+:host {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+app-logo {
+    position: absolute;
+    left: 0;
+    padding: 0.5rem;
+    height: 100%;
+}
+
+.nav ul {
+    padding: 0;
+}
+
+.CajaLinks {
+    display: inline-flex;
+    background-color: color var(--red);
+    height: 4rem;
+    width: 100%;
+}
+
+.CajaLinks li {
+    list-style: none;
+    width: 10rem;
+    background-color: var(--red);
+   
+    text-align: center;
+    border-radius: 1rem;
+
+}
+
+.CajaLinks li a.actived {
+    background-color: white;
+    color: var(--red);
+    border-radius: 1rem;
+
+}
+
+.CajaLinks li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    height: 3.9rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+
+}

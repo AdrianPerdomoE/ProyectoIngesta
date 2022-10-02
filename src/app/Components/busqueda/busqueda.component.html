@@ -1,0 +1,21 @@
+<app-navbar></app-navbar>
+<div class="container">
+    <h2 class="title">proyectos</h2>
+    <div class="Buscador">
+        <div>
+            <p>Buscador </p>
+        </div>
+        <div class="col-9">
+            <input arial-label="Search" type="search" placeholder="Buscar proyecto" class="form-control"
+                (keyup)="Loadproduct()" [(ngModel)]="search">
+        </div>
+    </div>
+    <h3 *ngIf="proyectos.length ==0">No hay ingestas realizadas, para ingresar un proyecto click <a [routerLink]="'/realizar-ingesta'"  class="links" >aquí</a></h3>
+    <div class="proyectos">
+        <div *ngFor="let proyecto of proyectos">
+            <div>
+                <app-proyecto-preview [proyecto]="proyecto"></app-proyecto-preview>
+            </div>
+        </div>
+    </div>
+</div>

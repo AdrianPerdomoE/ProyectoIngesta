@@ -1,0 +1,62 @@
+<app-navbar></app-navbar>
+<div class="container">
+    <div class="imagen">
+        <img src="{{url+'GetArchivo/'+proyecto.ubicacionArchivo}}" *ngIf="proyecto.tipoArchivo == 'Foto'">
+    </div>
+    <div>
+        <h3>Formato: {{proyecto.formato}}</h3>
+    </div>
+    <div>
+        <h3>Tipo de archivo: {{proyecto.tipoArchivo}}</h3>
+    </div>
+    <div>
+        <h3>Nombre: {{proyecto.nombre}}</h3>
+    </div>
+    <div>
+        <h3>creador: {{proyecto.creador}}</h3>
+    </div>
+    <div>
+        <h3>Descripcion del proyecto: {{proyecto.descripcion}}</h3>
+    </div>
+    <div>
+        <h3>Etiquetas:</h3>
+        <ul>
+            <li *ngFor="let etiqueta of proyecto.etiquetas">
+                <h4>{{etiqueta}}</h4>
+            </li>
+        </ul>  
+    </div>
+    <div>
+        <h3>Camarografos:</h3>
+        <ul>
+            <li *ngFor="let Camarografo of proyecto.camarografos">
+                <h4>{{Camarografo}}</h4>
+            </li>
+        </ul>  
+    </div>
+    <div>
+        <h3>Numero de descargas: {{proyecto.descargas}}</h3>
+    </div>
+    <div>
+        <h3>Usos en las descargas:</h3>
+        <ul *ngIf="proyecto.usosDescarga.length>0 else mensaje ">
+            <li *ngFor="let uso of proyecto.usosDescarga">
+                <h4>{{uso}}</h4>
+            </li>
+        </ul> 
+        <ng-template #mensaje> Aun no ha sido descargado este proyecto</ng-template> 
+    </div>
+    <div>
+        <h3>fecha: {{proyecto.fechaCreacion}}</h3>
+    </div>
+    <div *ngIf="!confirm">
+        <button [routerLink]="['/EditarProyecto',proyecto._id]" class="bttn-edit">Editar proyecto</button>
+        <button  class="bttn-descargar">descargar proyecto</button>
+        <button (click)="confirm=true" class="bttn-delete">Borrar proyecto</button>
+    </div>
+    <div *ngIf="confirm">
+        <span class="confirmacion">¿ESTA SEGURO QUE DESEA ELIMINAR EL PROYECTO?</span>
+        <button (click)="confirm = false" class="bttn-cancelar">cancelar</button>
+        <button (click)="eliminarProyecto(proyecto._id)" class="bttn-eliminar">ELIMINAR</button>
+    </div>
+</div>
