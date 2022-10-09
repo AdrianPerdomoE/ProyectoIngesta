@@ -1,7 +1,7 @@
 <app-navbar></app-navbar>
 <div class="container">
-    <h2 class="title">Mis archivos</h2>
-    <h3 *ngIf="proyectos.length ==0">No hay ingestas realizadas, para ingresar un proyecto click <a [routerLink]="'/realizar-ingesta'"  class="links" >aquí</a></h3>
+    <h2 class="title fontSignika">Mis archivos:</h2>
+    <h3 class="fontUbuntu" *ngIf="proyectos.length ==0">No hay ingestas realizadas, para ingresar un proyecto click <a [routerLink]="'/realizar-ingesta'"  class="links" >aquí</a></h3>
     <div class="proyectos">
         <div *ngFor="let proyecto of proyectos">
             <div>
@@ -9,7 +9,7 @@
             </div>
         </div>
     </div>
-    <h2 class="title">Mis descargas</h2>
-    <h3>Aun no se han realizado descargas</h3>
+    <h2 class="title fontSignika">Mis descargas:</h2>
+    <h3 class="fontUbuntu">Aún no se han realizado descargas</h3>
 </div>
 

@@ -1,26 +1,29 @@
-<app-logo></app-logo>
-<div class="nav">
-    <ul class="CajaLinks">
+
+<div class="nav container-fluid ">
+    <ul class="CajaLinks ">
+        <li>
+            <a> <app-logo></app-logo> </a>
+        </li>
     <li>
-        <a [routerLink]="'/Panel principal'" [routerLinkActive]="['actived']" class="links">panel principal</a>
+        <a [routerLink]="'/Panel principal'" [routerLinkActive]="['actived']" class="links fontSignika">Panel principal</a>
     </li>
     <li>
-        <a [routerLink]="'/Busqueda'" [routerLinkActive]="['actived']" class="links">Busqueda   </a>
+        <a [routerLink]="'/Busqueda'" [routerLinkActive]="['actived']" class="links fontSignika">Búsqueda   </a>
     </li>
     <li>
-        <a [routerLink]="'/Archivos-Subidos'" [routerLinkActive]="['actived']" class="links">Archivos Subidos  </a>
+        <a [routerLink]="'/Archivos-Subidos'" [routerLinkActive]="['actived']" class="links fontSignika">Archivos Subidos  </a>
     </li>
     <li>
-        <a [routerLink]="'/Mis-descargas'" [routerLinkActive]="['actived']" class="links">Mis descargas </a>
+        <a [routerLink]="'/Mis-descargas'" [routerLinkActive]="['actived']" class="links fontSignika">Mis descargas </a>
     </li>
     <li>
-        <a [routerLink]="'/realizar-ingesta'" [routerLinkActive]="['actived']" class="links">Realizar ingesta </a>
+        <a [routerLink]="'/realizar-ingesta'" [routerLinkActive]="['actived']" class="links fontSignika">Realizar ingesta </a>
     </li>
     <li>
-        <a  class="links">{{usuario.nombre}}\{{cargo}}</a>
+        <a  class="links fontSignika">{{usuario.nombre}}\{{cargo}}</a>
     </li>
     <li>
-        <a [routerLink]="'/Inicio'" [routerLinkActive]="['actived']" class="links" (click)="cerrarSesion()">Salir</a>
+        <a [routerLink]="'/Inicio'" [routerLinkActive]="['actived']" class="links fontSignika" (click)="cerrarSesion()">Salir</a>
     </li>
 </ul>
 </div>

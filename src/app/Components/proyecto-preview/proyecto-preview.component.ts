@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Proyecto } from 'src/app/models/Proyecto';
 import { Global } from 'src/app/services/Global';
-
+import 'bootstrap';
 
 @Component({
   selector: 'app-proyecto-preview',
@@ -24,3 +24,4 @@ export class ProyectoPreviewComponent implements OnInit {
     this._router.navigate(['/proyecto/'+this.proyecto._id])
 }
 }
+

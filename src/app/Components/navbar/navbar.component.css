@@ -23,6 +23,7 @@ app-logo {
     background-color: color var(--red);
     height: 4rem;
     width: 100%;
+    
 }
 
 .CajaLinks li {
@@ -39,6 +40,7 @@ app-logo {
     background-color: white;
     color: var(--red);
     border-radius: 1rem;
+    margin-top: 5%;
 
 }
 

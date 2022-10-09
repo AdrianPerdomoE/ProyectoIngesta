@@ -1,5 +1,5 @@
 .proyecto {
-    background-color: #fff;
+    background-color: #F6F3F3;
     height: 100%;
     border: 1px;
     border-radius: 5px;
@@ -9,6 +9,8 @@
     box-shadow: 0 0.2rem 0.4rem 0 rgb(0 0 0 / 20%);
     margin-bottom: 1rem;
     cursor: pointer;
+    font-size:small;
+    margin:10px;
 }
 
 .imagen {

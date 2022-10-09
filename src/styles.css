@@ -10,6 +10,7 @@ app-navbar{
 .UserForm label {
     display: block;
     margin: 0.5rem 0 0.5rem;
+    padding: 5%;
 }
 
 .productForm .imagen img {
@@ -95,4 +96,12 @@ form>div {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
+}
+
+.fontUbuntu{
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.fontSignika{
+    font-family: 'Signika', sans-serif;
 }
