@@ -44,6 +44,8 @@ border-radius: 1rem;
     height: 100%;
     gap: 1rem;
     margin-bottom: 0;
+    overflow: auto;
+    max-height: 100vh;
 }
  label{
     display: block;
