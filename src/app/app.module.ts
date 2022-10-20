@@ -23,6 +23,7 @@ import { ArchivoService } from './services/archivo.service';
 import { EditarProyectoComponent } from './Components/editar-proyecto/editar-proyecto.component';
 import { BusquedaComponent } from './Components/busqueda/busqueda.component';
 import { ProyectoPreviewPanelComponent } from './Components/proyecto-preview-panel/proyecto-preview-panel.component';
+import { DescargaComponent } from './Components/descarga/descarga.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,7 +39,8 @@ import { ProyectoPreviewPanelComponent } from './Components/proyecto-preview-pan
     ProyectoComponent,
     EditarProyectoComponent,
     BusquedaComponent,
-    ProyectoPreviewPanelComponent
+    ProyectoPreviewPanelComponent,
+    DescargaComponent
   ],
   imports: [
     BrowserModule,

@@ -51,7 +51,7 @@
     </div>
     <div *ngIf="!confirm" class="fontUbuntu">
         <button [routerLink]="['/EditarProyecto',proyecto._id]" class="bttn-edit">Editar proyecto</button>
-        <button  class="bttn-descargar">Descargar proyecto</button>
+        <app-descarga [proyecto]="proyecto"></app-descarga>
         <button (click)="confirm=true" class="bttn-delete">Borrar proyecto</button>
     </div>
     <div *ngIf="confirm">

@@ -3,6 +3,7 @@ import { ProyectoService } from 'src/app/services/proyecto.service';
 import { Proyecto } from 'src/app/models/Proyecto';
 import { Global } from 'src/app/services/Global';
 import { Usuario } from 'src/app/models/Usuario';
+import { BusquedaService } from 'src/app/services/busqueda.service';
 
 @Component({
   selector: 'app-proyectos-subidos',
@@ -15,7 +16,7 @@ export class ProyectosSubidosComponent implements OnInit {
   public status: string;
   private usuario : Usuario
   
-  constructor(private _ServicioProyecto:ProyectoService) {this.proyectos = [];
+  constructor(private _servicioBusqueda:BusquedaService) {this.proyectos = [];
     this.url = Global.url;
     this.status = "";
     this.usuario =  new Usuario('','','','',0)
@@ -25,7 +26,7 @@ export class ProyectosSubidosComponent implements OnInit {
     let localValor = localStorage.getItem('USUARIO')
     if(localValor!=null){
       this.usuario = JSON.parse(localValor)
-      this._ServicioProyecto.obtenerProyectosUsuario(this.usuario._id).subscribe(respuesta=>{
+      this._servicioBusqueda.obtenerProyectosUsuario(this.usuario._id).subscribe(respuesta=>{
         this.proyectos = respuesta.PROYECTOS
       })
     }

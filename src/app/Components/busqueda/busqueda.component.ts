@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ProyectoService } from 'src/app/services/proyecto.service';
 import { Proyecto } from 'src/app/models/Proyecto';
 import { Global } from 'src/app/services/Global';
 import { Usuario } from 'src/app/models/Usuario';
+import { BusquedaService } from 'src/app/services/busqueda.service';
 
 
 @Component({
@@ -16,7 +16,7 @@ export class BusquedaComponent implements OnInit {
   public status: string;
   private usuario : Usuario
   public search = ''
-  constructor(private _ServicioProyecto:ProyectoService) {this.proyectos = [];
+  constructor(private _ServicioBusqueda:BusquedaService) {this.proyectos = [];
     this.url = Global.url;
     this.status = "";
     this.usuario =  new Usuario('','','','',0)
@@ -26,7 +26,7 @@ export class BusquedaComponent implements OnInit {
     if(localValor!=null){
       this.usuario = JSON.parse(localValor)
     }
-    this._ServicioProyecto.obtenerTodosProyectos().subscribe(respuesta=>{
+    this._ServicioBusqueda.obtenerTodosProyectos().subscribe(respuesta=>{
       this.proyectos = respuesta.PROYECTOS
     })
   }

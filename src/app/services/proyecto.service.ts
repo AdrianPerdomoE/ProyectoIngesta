@@ -17,36 +17,6 @@ export class ProyectoService {
     let headers = new HttpHeaders().set("Content-Type", "application/json");
     return this._http.post(`${this.url}proyecto`, params, { headers: headers });
   }
-
-  obtenerTodosProyectos(): Observable<any> {
-      let headers = new HttpHeaders().set("Content-Type", "application/json");
-      return this._http.get(`${this.url}AllProyectos`, { headers: headers });
-  }
-  obtenerProyectosUsuario(id:string): Observable<any> {
-    let headers = new HttpHeaders().set("Content-Type", "application/json");
-    return this._http.get(`${this.url}proyectosUsuario/${id}`, { headers: headers });
-  }
-  obtenerProyectosTipo(tipo:string): Observable<any> {
-    let headers = new HttpHeaders().set("Content-Type", "application/json");
-    return this._http.get(`${this.url}proyectosTipo/${tipo}`, { headers: headers });
-  }
-  obtenerProyectosFormato(formato:string): Observable<any> {
-    let headers = new HttpHeaders().set("Content-Type", "application/json");
-    return this._http.get(`${this.url}proyectosFormato/${formato}`, { headers: headers });
-  }
-  obtenerProyectosCreador(creador:string): Observable<any> {
-    let headers = new HttpHeaders().set("Content-Type", "application/json");
-    return this._http.get(`${this.url}proyectosCreador/${creador}`, { headers: headers });
-  }
-  obtenerProyectosEtiquetas(etiquetas:Array<string>): Observable<any> {
-    let etiquetasString = JSON.stringify(etiquetas)
-    let headers = new HttpHeaders().set("Content-Type", "application/json");
-    return this._http.get(`${this.url}proyectosEtiquetas/${etiquetasString}`, { headers: headers });
-  }
-  obtenerProyectosNombre(nombre:string): Observable<any> {
-    let headers = new HttpHeaders().set("Content-Type", "application/json");
-    return this._http.get(`${this.url}proyectosNombre/${nombre}`, { headers: headers });
-  }
   obtenerProyecto(id:string): Observable<any> {
       let headers = new HttpHeaders().set("Content-Type", "application/json");
       return this._http.get(`${this.url}proyecto/${id}`, { headers: headers });
