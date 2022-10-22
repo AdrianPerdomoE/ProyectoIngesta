@@ -16,22 +16,18 @@ export class DescargaComponent implements OnInit {
     this.url = Global.url;
   }
   ngOnInit(): void {
-    this.pedirArchivo().subscribe(respuesta=>{
-      let data  = respuesta
-      var linkElement = document.querySelector('#descarga');
-      var blob = new Blob([data], { type: 'ContentType' });
-      var url = window.URL.createObjectURL(blob);
-      
-      linkElement?.setAttribute('href', url);
-      linkElement?.setAttribute("download", 'archivo');
-    })
+   
   }
-  pedirArchivo(): Observable<any> {
-    let headers = new HttpHeaders().set("Content-Type", "application/json");
-      return this._http.get(`${this.url}GetArchivo/'+${this.proyecto.ubicacionArchivo}`, { headers: headers });
-  }
+ 
 iniciarDescarga()
 { 
+ 
+  let linkElement = document.createElement('a');
+  linkElement.setAttribute('href',`${this.url}DownloadFile/${this.proyecto.ubicacionArchivo}`);
+  linkElement.setAttribute("download",String(this.proyecto.ubicacionArchivo));
+  linkElement.setAttribute('target',"_blank")
+  linkElement.click();
+    
   
   
 }
