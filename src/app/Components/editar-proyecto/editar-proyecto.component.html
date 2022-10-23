@@ -5,9 +5,7 @@
             [routerLink]="['/proyecto',proyectoGuardado._id]">AQUÍ</a></div>
     <div class="message Failed" *ngIf="status ==' Failed'"></div>
     <form class="fontUbuntu" #proyectoForm="ngForm" (ngSubmit)="onSubmit(proyectoForm)">
-        <div class="imagen">
-            <img src="{{url+'GetArchivo/'+proyecto.ubicacionArchivo}}" *ngIf="proyecto.tipoArchivo == 'Foto'">
-        </div>
+        <app-display-file [proyecto]="proyecto"></app-display-file>
         <div>
             <label for="name">Nombre del proyecto:</label>
             <input class="form-control" name="name" type="text" #nombre="ngModel" [(ngModel)]="proyecto.nombre" required>

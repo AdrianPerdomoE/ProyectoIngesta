@@ -24,6 +24,7 @@ import { EditarProyectoComponent } from './Components/editar-proyecto/editar-pro
 import { BusquedaComponent } from './Components/busqueda/busqueda.component';
 import { ProyectoPreviewPanelComponent } from './Components/proyecto-preview-panel/proyecto-preview-panel.component';
 import { DescargaComponent } from './Components/descarga/descarga.component';
+import { DisplayFileComponent } from './Components/display-file/display-file.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,7 +41,8 @@ import { DescargaComponent } from './Components/descarga/descarga.component';
     EditarProyectoComponent,
     BusquedaComponent,
     ProyectoPreviewPanelComponent,
-    DescargaComponent
+    DescargaComponent,
+    DisplayFileComponent
   ],
   imports: [
     BrowserModule,

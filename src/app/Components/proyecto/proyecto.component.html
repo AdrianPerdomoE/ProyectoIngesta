@@ -1,8 +1,6 @@
 <app-navbar></app-navbar>
 <div class="container fontUbuntu">
-    <div class="imagen">
-        <img src="{{url+'GetArchivo/'+proyecto.ubicacionArchivo}}" *ngIf="proyecto.tipoArchivo == 'Foto'">
-    </div>
+    <app-display-file [proyecto]="proyecto"></app-display-file>
     <div>
         <h3>Formato: {{proyecto.formato}}</h3>
     </div>

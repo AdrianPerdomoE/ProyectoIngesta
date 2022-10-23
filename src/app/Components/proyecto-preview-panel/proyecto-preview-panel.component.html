@@ -1,7 +1,5 @@
 <div class="proyecto" (click)="verProyecto()">
-    <div class="imagen">
-        <img src="{{url+'GetArchivo/'+proyecto.ubicacionArchivo}}" *ngIf="proyecto.tipoArchivo == 'Foto'">
-    </div>
+    <app-display-file [proyecto]="proyecto"></app-display-file>
     <div>
         <h3> {{proyecto.nombre}}</h3>
     </div>
