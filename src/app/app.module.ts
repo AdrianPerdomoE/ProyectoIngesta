@@ -25,6 +25,7 @@ import { BusquedaComponent } from './Components/busqueda/busqueda.component';
 import { ProyectoPreviewPanelComponent } from './Components/proyecto-preview-panel/proyecto-preview-panel.component';
 import { DescargaComponent } from './Components/descarga/descarga.component';
 import { DisplayFileComponent } from './Components/display-file/display-file.component';
+import { DescargaFormularioComponent } from './Components/descarga-formulario/descarga-formulario.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,7 +43,8 @@ import { DisplayFileComponent } from './Components/display-file/display-file.com
     BusquedaComponent,
     ProyectoPreviewPanelComponent,
     DescargaComponent,
-    DisplayFileComponent
+    DisplayFileComponent,
+    DescargaFormularioComponent
   ],
   imports: [
     BrowserModule,

@@ -25,9 +25,6 @@ iniciarDescarga()
   let linkElement = document.createElement('a');
   linkElement.setAttribute('href',`${this.url}DownloadFile/${this.proyecto.ubicacionArchivo}`);
   linkElement.setAttribute("download",String(this.proyecto.ubicacionArchivo));
-  linkElement.click();
-    
-  
-  
+  linkElement.click();  
 }
 }
