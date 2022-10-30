@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Usuario } from 'src/app/models/Usuario';
 import { UsuarioService } from 'src/app/services/usuario.service';
 import { Router } from '@angular/router';
+import { Sesion } from 'src/app/models/Sesion';
 
 @Component({
   selector: 'app-home',
@@ -12,18 +13,20 @@ export class HomeComponent implements OnInit {
   public existe = true
   public Inicio = ''
   public usuario = new Usuario('','','','',0)
+  public sesion = new Sesion(true,this.usuario)
   public InvalidEmail = false 
   constructor(private _servicioUsuario: UsuarioService, private _router: Router) { }
 
   ngOnInit(): void {
-    let usuarioLocal = localStorage.getItem("USUARIO")
-    if(usuarioLocal!= null){
-      this.usuario = JSON.parse(usuarioLocal)
+    let sesionLocal = sessionStorage.getItem("SESION")
+    if(sesionLocal!= null){
+      this.sesion = JSON.parse(sesionLocal)
     }
   }
   
   ingresar(usuario: any){
-    localStorage.setItem('USUARIO',JSON.stringify(usuario))
+    this.sesion.usuario = usuario
+    sessionStorage.setItem('SESION',JSON.stringify(this.sesion))
     this._router.navigate(['/Panel principal'])
   }
   ValidarEmail() {

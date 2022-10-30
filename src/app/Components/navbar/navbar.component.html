@@ -20,7 +20,7 @@
         <a [routerLink]="'/realizar-ingesta'" [routerLinkActive]="['actived']" class="links fontSignika">Realizar ingesta </a>
     </li>
     <li>
-        <a  class="links fontSignika">{{usuario.nombre}}\{{cargo}}</a>
+        <a  class="links fontSignika">{{sesion.usuario.nombre}}\{{cargo}}</a>
     </li>
     <li>
         <a [routerLink]="'/Inicio'" [routerLinkActive]="['actived']" class="links fontSignika" (click)="cerrarSesion()">Salir</a>

@@ -26,5 +26,13 @@ export class DescargaService {
           let headers = new HttpHeaders().set("Content-Type", "application/json");
           return this._http.delete(`${this.url}descarga/${id}`, { headers: headers });
       }
+      obtenerDescargasUsuario(id:string): Observable<any> {
+        let headers = new HttpHeaders().set("Content-Type", "application/json");
+        return this._http.get(`${this.url}descargasUsuaio/${id}`, { headers: headers });
+    }
+    obtenerDescargas(): Observable<any> {
+      let headers = new HttpHeaders().set("Content-Type", "application/json");
+      return this._http.get(`${this.url}AllDescargas}`, { headers: headers });
+  }
       
     }
