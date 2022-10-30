@@ -2,7 +2,7 @@ import { Usuario } from "./Usuario";
 
 export class Sesion{
     constructor(
-        estadoSesionAbierta:boolean = false,
-        usuario?:Usuario
+        public estadoSesionAbierta:boolean = false,
+        public usuario:Usuario
     ){}
 }

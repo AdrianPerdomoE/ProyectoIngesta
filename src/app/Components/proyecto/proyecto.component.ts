@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Proyecto} from 'src/app/models/Proyecto';
+import { Sesion } from 'src/app/models/Sesion';
+import { Usuario } from 'src/app/models/Usuario';
 import { Global } from 'src/app/services/Global';
 import { ProyectoService } from 'src/app/services/proyecto.service';
 
@@ -15,10 +17,12 @@ export class ProyectoComponent implements OnInit {
  public proyecto:Proyecto;
  public url: string;
  public confirm = false
+ public usuario:Usuario;
   constructor(private _router: Router,
     private _route: ActivatedRoute,private _servicioProyecto:ProyectoService) {
     this.url = Global.url
     this.proyecto = new Proyecto('',[],'','',[],'','','', new Date(),[],0,'','')
+    this.usuario =  new Usuario('','','','',0)
    }
 
   ngOnInit(): void {
@@ -26,6 +30,10 @@ export class ProyectoComponent implements OnInit {
       let id = params["id"];
       this.getProyecto(id);
     })
+    let localValor = sessionStorage.getItem('SESION')
+    if(localValor!=null){
+      let sesion:Sesion =JSON.parse(localValor)
+      this.usuario = sesion.usuario}
   }
   getProyecto(id: string) {
     this._servicioProyecto.obtenerProyecto(id).subscribe(

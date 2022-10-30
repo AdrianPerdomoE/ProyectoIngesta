@@ -48,14 +48,14 @@
         <h3>Fecha: {{proyecto.fechaCreacion}}</h3>
     </div>
     <div *ngIf="!confirm" class="fontUbuntu">
-        <button [routerLink]="['/EditarProyecto',proyecto._id]" class="bttn-edit">Editar proyecto</button>
+        <button [routerLink]="['/EditarProyecto',proyecto._id]" class="bttn-edit" *ngIf="usuario.cargo == 1 || usuario._id ==proyecto.creadorId">Editar proyecto</button>
         <button [routerLink]="['/DescargaForm',proyecto._id]" class="bttn-edit">Descargar proyecto</button>
-        <button (click)="confirm=true" class="bttn-delete">Borrar proyecto</button>
+        <button (click)="confirm=true" class="bttn-delete" *ngIf="usuario.cargo == 1|| usuario._id ==proyecto.creadorId">Borrar proyecto</button>
     </div>
     <div *ngIf="confirm">
         <span class="confirmacion">¿ESTA SEGURO QUE DESEA ELIMINAR EL PROYECTO?</span>
         <button (click)="confirm = false" class="bttn-cancelar">Cancelar</button>
-        <button (click)="eliminarProyecto(proyecto._id)" type="button" class="btn btn-danger fontUbuntu">ELIMINAR</button>
+        <button (click)="eliminarProyecto(proyecto._id)" type="button" class="btn btn-danger fontUbuntu" >ELIMINAR</button>
 
     </div>
 </div>

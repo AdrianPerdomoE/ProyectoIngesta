@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Proyecto } from 'src/app/models/Proyecto';
 import { ProyectoService } from 'src/app/services/proyecto.service';
-import { Global } from 'src/app/services/Global';
 import { ActivatedRoute, Router } from '@angular/router';
-import { DescargaService } from 'src/app/services/descarga.service';
 
 @Component({
   selector: 'app-descarga-formulario',

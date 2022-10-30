@@ -4,6 +4,7 @@ import { ProyectoService } from 'src/app/services/proyecto.service';
 import { ArchivoService } from 'src/app/services/archivo.service';
 import { Global } from 'src/app/services/Global';
 import { Usuario } from 'src/app/models/Usuario';
+import { Sesion } from 'src/app/models/Sesion';
 
 @Component({
   selector: 'app-realizar-ingesta',
@@ -33,9 +34,10 @@ export class RealizarIngestaComponent implements OnInit {
    this.camarografoActual = ''
    this.camarografos = []
    this.tipos = ['Video','Foto','Audio','Gif']
-   let valorLocal = localStorage.getItem('USUARIO')
+   let valorLocal = sessionStorage.getItem('SESION')
    if(valorLocal!=null){
-    this.usuario = JSON.parse(valorLocal)
+    let sesion:Sesion = JSON.parse(valorLocal)
+    this.usuario = sesion.usuario
    }
    else{
     this.usuario = new Usuario('','','','',0)

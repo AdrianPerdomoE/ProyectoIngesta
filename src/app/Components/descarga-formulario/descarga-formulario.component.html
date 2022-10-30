@@ -10,6 +10,6 @@
             <span *ngIf = "descripcion.length == 0" class="formError">Debes llenar este campo para descargar el archivo.</span>
             <!-- <span *ngIf="descripcion.touched && !descripcion.value" class="formError">Este campo es obligatorio</span> -->
         </div>
-        <app-descarga [proyecto]="proyecto" *ngIf="descripcion.length>0"></app-descarga>
+        <app-descarga [proyecto]="proyecto"  [descripcion]="descripcion"*ngIf="descripcion.length>0"></app-descarga>
         <button (click)="onCancel()">Cancelar</button>
     </form>
