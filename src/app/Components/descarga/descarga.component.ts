@@ -6,6 +6,7 @@ import { Usuario } from 'src/app/models/Usuario';
 import { DescargaService } from 'src/app/services/descarga.service';
 import { Global } from 'src/app/services/Global';
 import { ProyectoService } from 'src/app/services/proyecto.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-descarga',
@@ -17,7 +18,7 @@ export class DescargaComponent implements OnInit {
   @Input() descripcion!:string;
   public url:String;
   public usuario:Usuario;
-  constructor(private _proyectoService:ProyectoService,
+  constructor(private _route: ActivatedRoute,private _router: Router,private _proyectoService:ProyectoService,
     private _descargaService:DescargaService) { 
     this.url = Global.url;
     this.usuario =  new Usuario('','','','',0)
@@ -42,9 +43,13 @@ iniciarDescarga()
     if(response.PROYECTO){
       let descarga =new Descarga("",this.descripcion,this.usuario._id,this.proyecto._id)
       this._descargaService.registrarDescarga(descarga).subscribe(response=>{
-        if(response.DESCARGA) alert('Descarga exitosa')
+        
       })
     }
   })
 }
+onCancel(){
+  this._router.navigate(['/proyecto/'+this.proyecto._id])
+}
+
 }
