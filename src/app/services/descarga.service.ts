@@ -28,7 +28,7 @@ export class DescargaService {
       }
       obtenerDescargasUsuario(id:string): Observable<any> {
         let headers = new HttpHeaders().set("Content-Type", "application/json");
-        return this._http.get(`${this.url}descargasUsuaio/${id}`, { headers: headers });
+        return this._http.get(`${this.url}descargasUsuario/${id}`, { headers: headers });
     }
     obtenerDescargas(): Observable<any> {
       let headers = new HttpHeaders().set("Content-Type", "application/json");

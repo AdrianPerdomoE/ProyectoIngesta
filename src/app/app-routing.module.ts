@@ -10,6 +10,7 @@ import { ProyectoComponent } from './Components/proyecto/proyecto.component';
 import { EditarProyectoComponent } from './Components/editar-proyecto/editar-proyecto.component';
 import { BusquedaComponent } from './Components/busqueda/busqueda.component';
 import { DescargaFormularioComponent } from './Components/descarga-formulario/descarga-formulario.component';
+import { MisDescargasComponent } from './Components/mis-descargas/mis-descargas.component';
 
 const routes: Routes = [
   { path: "", component: HomeComponent },
@@ -22,7 +23,9 @@ const routes: Routes = [
   { path: "Inicio", component: HomeComponent },
   { path: "Registro", component: RegistroComponent },
   { path: "*", component: ErrorComponent },
-  { path :"DescargaForm/:id", component:DescargaFormularioComponent }
+  { path :"DescargaForm/:id", component:DescargaFormularioComponent},
+  { path :"MisDescargas", component: MisDescargasComponent},
+  
 ];
 
 @NgModule({

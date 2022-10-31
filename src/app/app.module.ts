@@ -26,6 +26,7 @@ import { ProyectoPreviewPanelComponent } from './Components/proyecto-preview-pan
 import { DescargaComponent } from './Components/descarga/descarga.component';
 import { DisplayFileComponent } from './Components/display-file/display-file.component';
 import { DescargaFormularioComponent } from './Components/descarga-formulario/descarga-formulario.component';
+import { MisDescargasComponent } from './Components/mis-descargas/mis-descargas.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,7 +45,8 @@ import { DescargaFormularioComponent } from './Components/descarga-formulario/de
     ProyectoPreviewPanelComponent,
     DescargaComponent,
     DisplayFileComponent,
-    DescargaFormularioComponent
+    DescargaFormularioComponent,
+    MisDescargasComponent
   ],
   imports: [
     BrowserModule,
