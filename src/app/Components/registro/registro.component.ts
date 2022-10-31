@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Usuario } from 'src/app/models/Usuario';
+import { UsuarioAdmin } from 'src/app/models/UsuarioAdmin';
+import { UsuarioEditor } from 'src/app/models/UsuarioEditor';
 import { UsuarioService } from 'src/app/services/usuario.service';
 
 @Component({
@@ -56,7 +58,10 @@ export class RegistroComponent implements OnInit {
 
   registar(userForm: any) { 
     
-    this.usuario.cargo = this.seleccionado.valor
+    if (this.seleccionado.valor==1) this.usuario = new UsuarioAdmin('',this.usuario.nombre,this.usuario.correo,this.usuario.password)
+    
+    else  this.usuario = new UsuarioEditor('',this.usuario.nombre,this.usuario.correo,this.usuario.password)
+
     this.usuarioGuardado = this.usuario
     this._ServicioUsuario.obtenerExistencia(this.usuario.correo).subscribe(
       repuesta=>{
