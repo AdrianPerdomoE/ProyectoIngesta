@@ -10,6 +10,14 @@
         </div>
     </div>
     <h2 class="title fontSignika">Mis descargas:</h2>
-    <h3 class="fontUbuntu">Aún no se han realizado descargas</h3>
+    <h3 class="fontUbuntu"*ngIf="proyectosDescargas.length ==0" >Aún no se han realizado descargas</h3>
+    <div  class="proyectos">
+        <div *ngFor="let proyecto of proyectosDescargas">
+            <div>
+                <app-proyecto-preview-panel [proyecto]="proyecto"></app-proyecto-preview-panel>
+            </div>
+
+        </div>
+    </div>
 </div>
 
