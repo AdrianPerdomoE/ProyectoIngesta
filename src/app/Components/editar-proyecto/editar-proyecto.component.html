@@ -20,6 +20,7 @@
             <ul>
                 <li *ngFor="let etiqueta of etiquetas" class="etiqueta" >
                         {{etiqueta}} 
+                        <button  type="button" class="btn btn-danger" aria-label="Close" (click) = "deleteEtiqueta(etiqueta)">Eliminar</button>
                 </li>
             </ul>
         </div>
@@ -38,6 +39,8 @@
             <ul>
                 <li *ngFor="let camarografo of camarografos" class="etiqueta" >
                         {{camarografo}} 
+                        <button type="button" class="btn btn-danger" aria-label="Close" (click) = "deleteCamarografo(camarografo)">Eliminar</button>
+                
                 </li>
             </ul>
         </div> 

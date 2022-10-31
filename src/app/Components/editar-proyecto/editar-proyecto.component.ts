@@ -59,6 +59,14 @@ export class EditarProyectoComponent implements OnInit {
     this.etiquetas.push(this.etiquetaActual)
     this.etiquetaActual = ''
   }
+
+  deleteEtiqueta(etiqueta: string){
+    this.etiquetas = this.etiquetas.filter(item => item !== etiqueta)
+  }
+
+  deleteCamarografo(camarografo:string){
+    this.camarografos = this.camarografos.filter(item => item !== camarografo)
+  }
   ValidarDatos(form:any){
     if(this.camarografos.length==0 || this.etiquetas.length==0){
       return false
