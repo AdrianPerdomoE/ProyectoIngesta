@@ -1,13 +1,13 @@
 <app-navbar></app-navbar>
 <div class="container">
     <h2 class="title fontSignika">Proyectos</h2>
-    <div class="Buscador fontUbuntu">
-        <div>
-            <p>Buscador </p>
-        </div>
-        <div class="col-9 font">
+    <div class=" fontUbuntu ">  
+        <div class="father">
+            <select class="form-label" name="selectBusqueda" #filtroProyecto="ngModel" [(ngModel)]="seleccionado"required>
+                <option [ngValue]="filtro" *ngFor="let filtro of filtros">{{filtro.nombre}}</option>
+            </select>
             <input class="form-control me-2 fontUbuntu buscador" arial-label="Search" type="search" placeholder="Buscar proyecto" 
-                (keyup)="Loadproduct()" [(ngModel)]="search">
+                (keyup)="Loadproduct()" [(ngModel)]="search" [disabled]="seleccionado.valor<0">
         </div>
     </div>
     <h3 *ngIf="proyectos.length ==0">No hay ingestas realizadas, para ingresar un proyecto click <a [routerLink]="'/realizar-ingesta'"  class="links fontUbuntu" >aquí</a></h3>

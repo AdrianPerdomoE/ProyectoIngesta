@@ -3,6 +3,9 @@
     --red:#8C264B;
     
 }
+*{
+    font-family: 'Ubuntu', sans-serif;
+}
 app-navbar{
     background: var(--red);
 }
@@ -32,7 +35,7 @@ input {
 
 .title {
 
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Ubuntu', sans-serif;
     font-size: 2.5rem;
     margin: 0;
     font-weight: 500;
