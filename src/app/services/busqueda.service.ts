@@ -31,10 +31,10 @@ obtenerProyectosCreador(creador:string): Observable<any> {
   let headers = new HttpHeaders().set("Content-Type", "application/json");
   return this._http.get(`${this.url}proyectosCreador/${creador}`, { headers: headers });
 }
-obtenerProyectosEtiquetas(etiquetas:Array<string>): Observable<any> {
-  let etiquetasString = JSON.stringify(etiquetas)
+obtenerProyectosEtiquetas(etiqueta:string): Observable<any> {
+  
   let headers = new HttpHeaders().set("Content-Type", "application/json");
-  return this._http.get(`${this.url}proyectosEtiquetas/${etiquetasString}`, { headers: headers });
+  return this._http.get(`${this.url}proyectosEtiquetas/${etiqueta}`, { headers: headers });
 }
 obtenerProyectosNombre(nombre:string): Observable<any> {
   let headers = new HttpHeaders().set("Content-Type", "application/json");
