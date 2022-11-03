@@ -50,6 +50,13 @@ export class RealizarIngestaComponent implements OnInit {
     this.camarografos.push(this.camarografoActual)
     this.camarografoActual = ''
   }
+
+  deleteCamarografo(camarografo:string){
+    this.camarografos = this.camarografos.filter(item => item !== camarografo)
+  }
+  deleteEtiqueta(etiqueta: string){
+    this.etiquetas = this.etiquetas.filter(item => item !== etiqueta)
+  }
   addEtiqueta(){
     this.etiquetas.push(this.etiquetaActual)
     this.etiquetaActual = ''

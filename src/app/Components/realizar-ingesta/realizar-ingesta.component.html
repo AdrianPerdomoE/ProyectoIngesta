@@ -1,6 +1,6 @@
 <app-navbar></app-navbar>
 <div class="productForm container">
-    <h2 class="title fontSignika">Ingesta</h2>
+    <h2 class="title fontUbuntu">Ingesta</h2>
     <div class="message Success" *ngIf="status =='Success'">El proyecto ha sido creado correctamente, puedes verlo <a
             [routerLink]="['/proyecto',proyectoGuardado._id]">AQUÍ</a></div>
     <div class="message Failed" *ngIf="status ==' Failed'"></div>
@@ -14,11 +14,12 @@
             <label for="etiqueta">Agregar etiquetas:</label>
             <input class="form-control" name="etiqueta" type="text" #etiquetaA="ngModel" [(ngModel)]="etiquetaActual">
             <span *ngIf="etiquetas.length==0" class="formError">Este campo es obligatorio</span>
-            <button (click)="addEtiqueta()" [disabled]="!etiquetaA.value">Agregar</button>
+            <button class="btn btn-primary" (click)="addEtiqueta()" [disabled]="!etiquetaA.value">Agregar</button>
             
             <ul>
                 <li *ngFor="let etiqueta of etiquetas" class="etiqueta" >
                         {{etiqueta}} 
+                        <button  type="button" class="btn btn-danger" aria-label="Close" (click) = "deleteEtiqueta(etiqueta)">Eliminar</button>
                 </li>
             </ul>
         </div>
@@ -32,10 +33,13 @@
             <label for="camarografo">Agregar camarógrafos:</label>
             <input class="form-control" name="camarografo" type="text" #camarografoA="ngModel" [(ngModel)]="camarografoActual">
             <span *ngIf="camarografos.length==0" class="formError">Este campo es obligatorio</span>
-            <button (click)="addCamarografo()" [disabled]="!camarografoA.value">Agregar</button>
+            <button class="btn btn-primary" (click)="addCamarografo()" [disabled]="!camarografoA.value">Agregar</button>
             <ul>
                 <li *ngFor="let camarografo of camarografos" class="etiqueta" >
                         {{camarografo}} 
+                        <button type="button" class="btn btn-danger" aria-label="Close" (click) = "deleteCamarografo(camarografo)">Eliminar</button>
+
+
                 </li>
             </ul>
         </div>
@@ -52,6 +56,7 @@
             </select>
             <span *ngIf="tipoA.touched && tipoA.value == 0" class="formError">Este campo es obligatorio</span>
           </div>
+          
           <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" type="submit" [disabled]="!ValidarDatos(proyectoForm)">Realizar Ingesta</button>
 
           <!-- Modal -->

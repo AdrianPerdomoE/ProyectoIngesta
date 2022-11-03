@@ -16,7 +16,7 @@
             <label for="etiqueta">Agregar etiquetas:</label>
             <input class="form-control" name="etiqueta" type="text" #etiquetaA="ngModel" [(ngModel)]="etiquetaActual">
             <span *ngIf="etiquetas.length==0" class="formError">Este campo es obligatorio</span>
-            <button (click)="addEtiqueta()" [disabled]="!etiquetaA.value">Agregar</button>
+            <button class="btn btn-primary" (click)="addEtiqueta()" [disabled]="!etiquetaA.value">Agregar</button>
             <ul>
                 <li *ngFor="let etiqueta of etiquetas" class="etiqueta" >
                         {{etiqueta}} 
@@ -35,7 +35,7 @@
             <label for="camarografo">Agregar camarógrafos</label>
             <input class="form-control" name="camarografo" type="text" #camarografoA="ngModel" [(ngModel)]="camarografoActual">
             <span *ngIf="camarografos.length==0" class="formError">Este campo es obligatorio</span>
-            <button (click)="addCamarografo()" [disabled]="!camarografoA.value">Agregar</button>
+            <button class="btn btn-primary" (click)="addCamarografo()" [disabled]="!camarografoA.value">Agregar</button>
             <ul>
                 <li *ngFor="let camarografo of camarografos" class="etiqueta" >
                         {{camarografo}} 
@@ -61,7 +61,7 @@
         
         
         
-          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" class="fontSignika" type="submit" [disabled]="!ValidarDatos(proyectoForm)">Realizar modificación</button>
+          <button type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop" class="fontSignika btn btn-primary" type="submit" [disabled]="!ValidarDatos(proyectoForm)">Realizar modificación</button>
            <!-- Modal -->
            <div  class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
             <div class="modal-dialog">
