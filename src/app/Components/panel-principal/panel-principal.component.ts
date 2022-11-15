@@ -51,6 +51,6 @@ export class PanelPrincipalComponent implements OnInit {
         } 
       })
     }
-    
+    // window.alert("Bienvenido Gabriel")
   }
 }

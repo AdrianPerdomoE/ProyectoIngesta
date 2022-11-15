@@ -23,6 +23,7 @@ export class RealizarIngestaComponent implements OnInit {
   public camarografoActual:string;
   public tipoSeleccionado:any;
   public tipos:string[];
+  public nombreValido = true;
   constructor(private _servicioProyecto: ProyectoService,
     private _servicioArchivo: ArchivoService) { 
       this.status = "";
@@ -61,10 +62,26 @@ export class RealizarIngestaComponent implements OnInit {
     this.etiquetas.push(this.etiquetaActual)
     this.etiquetaActual = ''
   }
+
+  validarNombre(){
+    let numeros = []
+    for(let i =  0; i <10;i++){
+      numeros.push(String(i))
+    }
+
+    numeros.forEach(num =>{ 
+      if(this.proyecto.nombre.includes(num)){
+         alert('Este campo no puede contener un numero')
+        return;
+      }
+    })
+  }
+
   ValidarDatos(form:any){
     if(this.camarografos.length==0 || this.etiquetas.length==0){
       return false
     }
+
     return form.form.valid
   }
   onSubmit(form: any) {

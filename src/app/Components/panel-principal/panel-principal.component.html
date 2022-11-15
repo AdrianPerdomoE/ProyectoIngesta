@@ -1,5 +1,7 @@
 <app-navbar></app-navbar>
 <div class="container">
+    <!-- <h2 class="title fontUbuntu">Bienvenido {{usuario.nombre}}</h2>
+    <h2></h2> -->
     <h2 class="title fontUbuntu">Mis archivos:</h2>
     <h3 class="fontUbuntu" *ngIf="proyectos.length ==0">No hay ingestas realizadas, para ingresar un proyecto click <a [routerLink]="'/realizar-ingesta'"  class="links" >aquí</a></h3>
     <div class="proyectos">

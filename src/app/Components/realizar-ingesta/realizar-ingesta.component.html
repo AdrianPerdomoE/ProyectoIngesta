@@ -7,7 +7,7 @@
     <form class="fontUbuntu" #proyectoForm="ngForm" (ngSubmit)="onSubmit(proyectoForm)">
         <div>
             <label for="name">Nombre del proyecto:</label>
-            <input class="form-control"  name="name" type="text" #nombre="ngModel" [(ngModel)]="proyecto.nombre" required>
+            <input class="form-control"  name="name" type="text" #nombre="ngModel" [(ngModel)]="proyecto.nombre" (keyup)="validarNombre()">
             <span *ngIf="nombre.touched && !nombre.value" class="formError">Este campo es obligatorio</span>
         </div>
         <div>
