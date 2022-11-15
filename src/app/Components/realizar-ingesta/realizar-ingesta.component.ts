@@ -63,19 +63,19 @@ export class RealizarIngestaComponent implements OnInit {
     this.etiquetaActual = ''
   }
 
-  validarNombre(){
-    let numeros = []
-    for(let i =  0; i <10;i++){
-      numeros.push(String(i))
-    }
+  // validarNombre(){
+  //   let numeros = []
+  //   for(let i =  0; i <10;i++){
+  //     numeros.push(String(i))
+  //   }
 
-    numeros.forEach(num =>{ 
-      if(this.proyecto.nombre.includes(num)){
-         alert('Este campo no puede contener un numero')
-        return;
-      }
-    })
-  }
+  //   numeros.forEach(num =>{ 
+  //     if(this.proyecto.nombre.includes(num)){
+  //        alert('Este campo no puede contener un numero')
+  //       return;
+  //     }
+  //   })
+  // }
 
   ValidarDatos(form:any){
     if(this.camarografos.length==0 || this.etiquetas.length==0){
