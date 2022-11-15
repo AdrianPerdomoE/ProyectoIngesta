@@ -1,0 +1,61 @@
+<app-navbar></app-navbar>
+<div class="container fontUbuntu">
+    <app-display-file [proyecto]="proyecto"></app-display-file>
+    <div>
+        <h4>Formato: {{proyecto.formato}}</h4>
+    </div>
+    <div>
+        <h4>Tipo de archivo: {{proyecto.tipoArchivo}}</h4>
+    </div>
+    <div>
+        <h4>Nombre: {{proyecto.nombre}}</h4>
+    </div>
+    <div>
+        <h4>Creador: {{proyecto.creador}}</h4>
+    </div>
+    <div>
+        <h4>Descripción del proyecto: {{proyecto.descripcion}}</h4>
+    </div>
+    <div>
+        <h4>Etiquetas:</h4>
+        <ul>
+            <li *ngFor="let etiqueta of proyecto.etiquetas">
+                <h5>{{etiqueta}}</h5>
+            </li>
+        </ul>  
+    </div>
+    <div>
+        <h4>Camarógrafos:</h4>
+        <ul>
+            <li *ngFor="let Camarografo of proyecto.camarografos">
+                <h5>{{Camarografo}}</h5>
+            </li>
+        </ul>  
+    </div>
+    <div>
+        <h4>Número de descargas: {{proyecto.descargas}}</h4>
+    </div>
+    <div>
+        <h4>Usos en las descargas:</h4>
+        <ul *ngIf="proyecto.usosDescarga.length>0 else mensaje ">
+            <li *ngFor="let uso of proyecto.usosDescarga">
+                <h5>{{uso}}</h5>
+            </li>
+        </ul> 
+        <ng-template #mensaje> Aún no ha sido descargado este proyecto</ng-template> 
+    </div>
+    <div>
+        <h4>Fecha: {{proyecto.fechaCreacion}}</h4>
+    </div>
+    <div *ngIf="!confirm" class="fontUbuntu">
+        <button [routerLink]="['/EditarProyecto',proyecto._id]" class="bttn-edit" *ngIf="usuario.cargo == 1 || usuario._id ==proyecto.creadorId">Editar proyecto</button>
+        <button [routerLink]="['/DescargaForm',proyecto._id]" class="bttn-edit">Descargar proyecto</button>
+        <button (click)="confirm=true" class="bttn-delete" *ngIf="usuario.cargo == 1|| usuario._id ==proyecto.creadorId">Borrar proyecto</button>
+    </div>
+    <div *ngIf="confirm">
+        <span class="confirmacion">¿ESTA SEGURO QUE DESEA ELIMINAR EL PROYECTO?</span>
+        <button (click)="confirm = false" class="bttn-cancelar">Cancelar</button>
+        <button (click)="eliminarProyecto(proyecto._id)" type="button" class="btn btn-danger fontUbuntu" >ELIMINAR</button>
+
+    </div>
+</div>

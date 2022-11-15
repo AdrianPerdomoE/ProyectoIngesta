@@ -1,0 +1,110 @@
+:root {
+    --lightBlue: #3FBFBF;
+    --red:#8C264B;
+    
+}
+*{
+    font-family: 'Ubuntu', sans-serif;
+}
+app-navbar{
+    background: var(--red);
+}
+.productForm label,
+.UserForm label {
+    display: block;
+    margin: 0.5rem 0 0.5rem;
+    padding: 5%;
+}
+
+.productForm .imagen img {
+    display: block;
+    margin: 0.5rem 0 0.5rem;
+}
+
+input {
+    display: block;
+}
+
+.Buscador input {
+    border-radius: 5px;
+    width: 15rem;
+    height: 2rem;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.title {
+
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 2.5rem;
+    margin: 0;
+    font-weight: 500;
+    letter-spacing: -0.1rem;
+    justify-self: center;
+}
+
+.alerta {
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(36, 189, 38, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+button {
+    padding: 0.4rem 0.8rem;
+    border-radius: 0.3rem;
+    border: none;
+    letter-spacing: 0.1rem;
+    background-color: var(--lightBlue);
+    margin: 0.5rem;
+    cursor: pointer;
+}
+
+input,
+textarea,
+select {
+    display: block;
+    padding: 0.4rem 0.8rem;
+    border-radius: 0.3rem;
+    border: solid thin #aaa;
+}
+
+.formError {
+    display: block;
+    color: crimson;
+    font-size: x-small;
+    font-weight: 700;
+    letter-spacing: 0.05rem;
+}
+
+form>div {
+    margin-bottom: 1rem;
+}
+.imagen img {
+    width: 8rem;
+    height: 8rem;
+}
+.container {
+    background-color: gainsboro;
+    width: 70%;
+    margin-inline: auto;
+    margin-bottom: 1rem;
+    padding: 2rem;
+}
+.proyectos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.fontUbuntu{
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.fontSignika{
+    font-family: 'Signika', sans-serif;
+}

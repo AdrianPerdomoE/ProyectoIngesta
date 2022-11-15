@@ -1,0 +1,49 @@
+<div id="Inicio">
+    <h2 class="fontUbuntu">Registrarse</h2>
+    <div class="cuadro" >
+      <div class="UserForm ">
+        <div class="message Success" *ngIf="status == 'Success'">Registrado!</div>
+        <div class="message Failed" *ngIf="status == 'Failed'|| status == 'NombreUsuarioExiste'">Problema al registrar!
+        </div>
+        <form #userForm="ngForm" class="formRegistro">
+            <div>
+                <label class="fontUbuntu form-label" for="nombre">Nombre:</label>
+                <input class="form-control" name="nombre" type="text" #nombre="ngModel" [(ngModel)]="usuario.nombre" required>
+                <span *ngIf="nombre.touched && !nombre.value" class="formError fontUbuntu">Este campo es obligatorio</span>
+            </div>
+            <div>
+                <label class="fontUbuntu form-label" for="correo">Correo institucional:</label>
+                <div class="message Existente fontUbuntu" *ngIf="status =='Existe'">Usuario ya existente!
+                </div>
+                <input  class="form-control"name="correo" type="email" #correo="ngModel" [(ngModel)]="usuario.correo" required>
+                <span *ngIf="correo.touched && !correo.value" class="formError fontUbuntu">Este campo es obligatorio</span>
+                 <span class="formError fontUbuntu" *ngIf="InvalidEmail">Ingrese un correo valido</span>
+            </div>
+            <div>
+              <label class="fontUbuntu form-label" for="tipo">Cargo:</label>
+              <select class="form-select"  name="miselect" #CargoUsuario="ngModel" [(ngModel)]="seleccionado"required>
+                  <option [ngValue]="cargo" *ngFor="let cargo of cargos">{{cargo.nombre}}</option>
+              </select>
+              <span *ngIf="CargoUsuario.touched && CargoUsuario.value == 0" class="formError fontUbuntu">Este campo es obligatorio</span>
+            </div>
+            <div>
+                <label class="fontUbuntu form-label" for="password">Contraseña:</label>
+                <input class="form-control" name="password" type="password" #password="ngModel" [(ngModel)]="usuario.password" required>
+                <span *ngIf="password.touched && !password.value" class="formError fontUbuntu">Este campo es obligatorio</span>
+            </div>
+            <div>
+              <label class="fontUbuntu form-label" for="passwordConfirmacion">Confirmar Contraseña:</label>
+              <input class="form-control" name="passwordConfirmacion" type="password" #confirmacionpassword="ngModel" [(ngModel)]="passwordConfirmacion"  (keyup) ="confirmarPass()" required>
+              <span *ngIf="confirmacionpassword && !confirmacionpassword.value" class="formError fontUbuntu">Este campo es obligatorio</span>
+              <span *ngIf="!iguales && confirmacionpassword.touched" class="formError fontUbuntu">Contraseña es diferente</span>
+          </div>
+            <button class="fontUbuntu btn btn-info btn-login" (click)='registar(userForm)' [disabled]="!ValidarDatos(userForm)">Registrarse</button>
+        </form>
+    </div>
+
+    </div>
+    <label class="fontUbuntu labelFinal" > Ya tienes una cuenta?  <a href="Inicio">Inicia sesión aquí</a></label>
+</div>
+<div id="EspacioFondo">
+    <div id="FondoBloque9"> </div>
+</div>

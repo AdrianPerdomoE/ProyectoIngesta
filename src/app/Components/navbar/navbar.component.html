@@ -1,0 +1,29 @@
+
+<div class="nav container-fluid ">
+    <ul class="CajaLinks ">
+        <li>
+            <a> <app-logo></app-logo> </a>
+        </li>
+    <li>
+        <a [routerLink]="'/Panel principal'" [routerLinkActive]="['actived']" class="links fontSignika">Panel principal</a>
+    </li>
+    <li>
+        <a [routerLink]="'/Busqueda'" [routerLinkActive]="['actived']" class="links fontSignika">Búsqueda   </a>
+    </li>
+    <li>
+        <a [routerLink]="'/Archivos-Subidos'" [routerLinkActive]="['actived']" class="links fontSignika">Archivos Subidos  </a>
+    </li>
+    <li>
+        <a [routerLink]="'/MisDescargas'" [routerLinkActive]="['actived']" class="links fontSignika">Mis descargas </a>
+    </li>
+    <li>
+        <a [routerLink]="'/realizar-ingesta'" [routerLinkActive]="['actived']" class="links fontSignika">Realizar ingesta </a>
+    </li>
+    <li>
+        <a  class="links fontSignika">{{sesion.usuario.nombre}}\{{cargo}}</a>
+    </li>
+    <li>
+        <a [routerLink]="'/Inicio'" [routerLinkActive]="['actived']" class="links fontSignika" (click)="cerrarSesion()">Salir</a>
+    </li>
+</ul>
+</div>

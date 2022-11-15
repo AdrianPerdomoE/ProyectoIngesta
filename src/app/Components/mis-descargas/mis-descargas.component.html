@@ -1,0 +1,12 @@
+<app-navbar></app-navbar>
+<div class="container">
+    <h2 class="title fontUbuntu">Archivos descargados </h2>
+    <h3 *ngIf="proyectos.length ==0">No hay archivos descargados</h3>
+    <div class="proyectos">
+        <div *ngFor="let proyecto of proyectos">
+            <div>
+                <app-proyecto-preview [proyecto]="proyecto"></app-proyecto-preview>
+            </div>
+        </div>
+    </div>
+</div>

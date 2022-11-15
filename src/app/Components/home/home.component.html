@@ -1,0 +1,29 @@
+<div id="Inicio" >
+    <h2 class="fontUbuntu">Inicio de sesión</h2>
+    <div class="cuadro "  >
+    <span *ngIf="!existe" class="formError">Usuario no existe </span>
+    <span *ngIf="Inicio == 'FailedPassword'" class="formError">Contraseña erronea </span>
+    <span *ngIf="Inicio == 'Failed'" class="formError">Error al intentar iniciar sesion </span>
+      <form #loginForm="ngForm" class="UserForm">
+        
+        <div>
+            <label class="fontUbuntu form-label" for="correo">Correo institucional:</label>
+            <input class="form-control" name="correo" type="text" #correo="ngModel" [(ngModel)]="usuario.correo" required>
+            <span *ngIf="correo.touched && !correo.value" class="formError">Este campo es obligatorio</span>
+            <span class="formError" *ngIf="InvalidEmail">Ingrese un correo válido</span>
+        </div>
+        <div>
+            <label class="fontUbuntu form-label" for="password">Contraseña:</label>
+            <input class="form-control" name="password" type="password" #password="ngModel" [(ngModel)]="usuario.password" required>
+            <span *ngIf="password.touched && !password.value" class="formError">Este campo es obligatorio</span>
+        </div>
+        <button class="fontSignika btn btn-info btn-login" (click)="onSubmit() " [disabled]="!ValidarDatos(loginForm)"> 
+            Iniciar sesión
+        </button>
+    </form>
+    </div>
+    <label class="fontUbuntu labelLogin"> No tienes una cuenta?  <a class="fontUbuntu" href="Registro">Registrate aquí</a></label>
+</div>
+<div id="EspacioFondo">
+    <div id="FondoBloque9"> </div>
+</div>

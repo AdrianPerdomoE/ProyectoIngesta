@@ -1,0 +1,28 @@
+.buscador{
+   width: 93%;
+   margin-left: 2rem;
+   margin-right: 1rem;
+}
+
+.form-label{
+   width: 30%;
+   margin-left:2rem;
+   height: 40px;
+}
+
+.textoBuscar{
+  padding-left: 7%;
+}
+.father{
+   display: block;
+   flex-wrap: nowrap;
+   justify-content: space-evenly;
+}
+.father::before {
+   font-weight: bold;
+   padding-left: 6rem;
+}
+
+h2{
+   margin-bottom: 1rem;
+}
